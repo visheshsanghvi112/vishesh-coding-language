@@ -73,7 +73,37 @@ impl Aadhaar {
         self.define_mool("लभ्यते", MoolSutra::labhyate());
         self.define_mool("शब्द", MoolSutra::shabd());
         self.define_mool("अंक", MoolSutra::ank());
+        self.define_mool("लेखन", MoolSutra::lekhan());
+        self.define_mool("वाचन", MoolSutra::vaachan());
+        self.define_mool("गूढलिपि", MoolSutra::hash());
+        
+        // Mathematics Module (गणित)
+        self.define_mool("मूल", MoolSutra::mool());           // Square Root
+        self.define_mool("घात", MoolSutra::ghaat());          // Power
+        self.define_mool("निरपेक्ष", MoolSutra::nirapeksh()); // Absolute Value
+        self.define_mool("ज्या", MoolSutra::jya());           // Sine
+        self.define_mool("कोज्या", MoolSutra::kojya());       // Cosine
+        self.define_mool("स्पर्शज्या", MoolSutra::sparshajya()); // Tangent
+        self.define_mool("पै", MoolSutra::pai());             // Pi constant
+        self.define_mool("यादृच्छिक", MoolSutra::yadrichchhik()); // Random
+        self.define_mool("पूर्णाङ्क", MoolSutra::poornaank()); // Floor
+        self.define_mool("उन्नयन", MoolSutra::unnayan());     // Ceiling
+        self.define_mool("लघुगणक", MoolSutra::laghuganik()); // Natural Log
+        
+        // String Manipulation Module (शब्द विस्तार)
+        self.define_mool("कर्तन", MoolSutra::kartan());           // Trim
+        self.define_mool("दीर्घाक्षर", MoolSutra::dirghakshar()); // Uppercase
+        self.define_mool("ह्रस्वाक्षर", MoolSutra::hrasvakshar()); // Lowercase
+        self.define_mool("समाविष्ट", MoolSutra::samavishta());   // Contains
+        self.define_mool("प्रतिस्थापन", MoolSutra::pratisthapan()); // Replace
+        self.define_mool("अक्षरम्", MoolSutra::aksharam());       // CharAt
+        self.define_mool("विभाजन", MoolSutra::vibhajan());       // Split
+        self.define_mool("उल्टा", MoolSutra::ulta());             // Reverse
+        self.define_mool("आरम्भ", MoolSutra::aarambh());         // StartsWith
+        self.define_mool("अन्त", MoolSutra::anta());             // EndsWith
+        
         self.rashi_murdhan = self.rashi.as_mut_ptr();
+
     }
 
     pub fn vyakhyati(&mut self, sc: Sourcecode) -> Result<(), Dosa> {

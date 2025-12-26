@@ -1,0 +1,6 @@
+# Warriors Data
+# Name, Type, Health, Strength
+Arjuna, Archer, 100, 25
+Bheema, Mace, 120, 30
+Duryodhana, Mace, 110, 28
+Karna, Archer, 95, 26

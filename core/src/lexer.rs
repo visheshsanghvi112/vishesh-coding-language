@@ -155,6 +155,15 @@ impl<'s> Lexer<'s> {
                 self.line += 1;
                 self.column = 0;
             }
+            
+            if self.peek() == '\\' {
+                self.read_next();
+                if !self.is_eof() {
+                     self.read_next();
+                }
+                continue;
+            }
+
             self.read_next();
         }
 

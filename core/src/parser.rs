@@ -480,7 +480,27 @@ impl<'p> Parser<'p> {
     pub fn string(&mut self, _can_assing: bool) {
         let mulya = self.previous.mulya;
         let mulya = &mulya[1..(mulya.len() - 1)];
-        let s = self.gc.intern(mulya.to_owned());
+        let mut unescaped = String::with_capacity(mulya.len());
+        let mut chars = mulya.chars().peekable();
+        while let Some(c) = chars.next() {
+            if c == '\\' {
+                match chars.next() {
+                    Some('n') => unescaped.push('\n'),
+                    Some('r') => unescaped.push('\r'),
+                    Some('t') => unescaped.push('\t'),
+                    Some('\\') => unescaped.push('\\'),
+                    Some('0') => unescaped.push('\0'),
+                    Some('\'') => unescaped.push('\''),
+                    Some('"') => unescaped.push('"'),
+                    Some(c) => unescaped.push(c),
+                    None => break,
+                }
+            } else {
+                unescaped.push(c);
+            }
+        }
+
+        let s = self.gc.intern(unescaped);
         self.emit_achar(Mulya::Vakya(s));
     }
 

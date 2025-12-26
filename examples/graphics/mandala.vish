@@ -1,0 +1,95 @@
+# Vedic Mandala Generator
+# Generates a Sacred Geometry SVG file
+
+विधि Canvas {
+    मान width = 500;
+    मान height = 500;
+    मान content = "";
+    
+    सूत्र Srijan() {
+        content = "<svg width='500' height='500' xmlns='http://www.w3.org/2000/svg' style='background-color:black'>";
+    }
+
+    सूत्र Samapan() {
+        content = content + "</svg>";
+        # Write to file
+        लेखन("mandala.svg", content);
+        वद("Mandala Generated: mandala.svg");
+    }
+
+    सूत्र Chakra(cx, cy, r, color) {
+        # <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+        मान shape = "<circle cx='" + cx + "' cy='" + cy + "' r='" + r + "' stroke='" + color + "' stroke-width='2' fill='none' />";
+        content = content + shape;
+    }
+    
+    सूत्र Rekha(x1, y1, x2, y2, color) {
+        # <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+        मान shape = "<line x1='" + x1 + "' y1='" + y1 + "' x2='" + x2 + "' y2='" + y2 + "' style='stroke:" + color + ";stroke-width:1' />";
+        content = content + shape;
+    }
+}
+
+# --- Execution ---
+
+वद("--- Vedic Mandala: Geometry of Truth ---");
+
+मान art = Canvas();
+art.Srijan();
+
+# 1. The Bindu (Center)
+art.Chakra(250, 250, 5, "gold");
+
+# 2. Concentric Circles (The Cosmos)
+art.Chakra(250, 250, 100, "cyan");
+art.Chakra(250, 250, 150, "magenta");
+art.Chakra(250, 250, 200, "gold");
+
+
+# 3. Rotating Triangles (The Energy)
+# We will simulate a loop manually for the demo since 'paryanta' in my interpreter
+# is hardcoded for the game battle. I'll just draw a few calculated lines manually
+# to show the 'jya/kojya' capabilities.
+
+# Center
+मान cx = 250;
+मान cy = 250;
+मान r = 150;
+
+# Triangle 1 Setup (0, 120, 240 degrees) roughly in radians (0, 2.09, 4.18)
+# Point 1 (Top)
+मान p1x = cx + r * कोज्या(0);
+मान p1y = cy + r * ज्या(0);
+
+# Point 2 
+मान p2x = cx + r * कोज्या(2.09);
+मान p2y = cy + r * ज्या(2.09);
+
+# Point 3
+मान p3x = cx + r * कोज्या(4.18);
+मान p3y = cy + r * ज्या(4.18);
+
+# Draw Triangle 1
+art.Rekha(p1x, p1y, p2x, p2y, "lime");
+art.Rekha(p2x, p2y, p3x, p3y, "lime");
+art.Rekha(p3x, p3y, p1x, p1y, "lime");
+
+# Inverted Triangle (Star formation)
+मान r2 = 150;
+# Rotated by 60 deg (1.04 rad)
+मान p4x = cx + r2 * कोज्या(1.04);
+मान p4y = cy + r2 * ज्या(1.04);
+
+मान p5x = cx + r2 * कोज्या(3.14);
+मान p5y = cy + r2 * ज्या(3.14);
+
+मान p6x = cx + r2 * कोज्या(5.23);
+मान p6y = cy + r2 * ज्या(5.23);
+
+art.Rekha(p4x, p4y, p5x, p5y, "orange");
+art.Rekha(p5x, p5y, p6x, p6y, "orange");
+art.Rekha(p6x, p6y, p4x, p4y, "orange");
+
+# Finalize
+art.Samapan();
+

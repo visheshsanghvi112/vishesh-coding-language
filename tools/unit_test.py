@@ -66,8 +66,11 @@ def assert_unimplemented(case=False, msg=None):
 # Create test cases from tests folder
 def get_test_cases():
     tests_path = pathlib.Path("tests")
-    tests = sorted(pathlib.Path(tests_path).glob("*/*.ved"))
-    return tests
+    # Support both .ved and .vish extensions
+    tests_ved = sorted(pathlib.Path(tests_path).glob("*/*.ved"))
+    tests_vish = sorted(pathlib.Path(tests_path).glob("*/*.vish"))
+    return tests_ved + tests_vish
+
 
 
 # parse comments from test files

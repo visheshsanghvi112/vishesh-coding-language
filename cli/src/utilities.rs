@@ -10,29 +10,36 @@ use vedic_core::fetchsource::Sourcecode;
 pub fn help() {
     println!(
         "
-    Vedic v{}
+    Vish Language v{}
+    
+    A Sanskrit-inspired programming language created by Vishesh.
+    
+    Developed with ❤️ by: Vishesh
 
-    Vedic is a programming language that is designed to be easy to learn and use.
-
-    Developed by: Pt. Prashant Tripathi
-
-    Usage: vedic [--option] [path/to/script.ved]
+    Usage: vish [--option] [path/to/script.vish]
 
     Options:
-    -h, --help      Show this vedic cli help message
+    -h, --help      Show this help message
     -v, --version   Print version number
-    -r, --repl      Run the vedic repl
+    -r, --repl      Run the interactive REPL
+
+    Supported Extensions: .vish / .ved / .veda / .vedic
 
     Examples:
-    ➤ to run a vedic script
-      vedic script.ved
+    ➤ Run a Vish script
+      vish script.vish
 
-    ➤ to start the vedic repl
-      vedic -r
+    ➤ Start the REPL
+      vish -r
+
+    ➤ Math operations
+      मान x = मूल(16) + घात(2, 3);
+      वद(x);  # Output: 12
 ",
         env!("CARGO_PKG_VERSION")
     );
 }
+
 
 // ❯ this command will install the panchang.ved vedic script from given url
 // vedic -i https://git.com/panchang.ved
@@ -60,7 +67,8 @@ pub fn run(args: Vec<String>) {
 }
 
 pub fn run_file(path: &str) {
-    if path.ends_with(".ved") || path.ends_with(".veda") || path.ends_with(".vedic") {
+    // Support .vish extension for Vishesh's custom branding!
+    if path.ends_with(".ved") || path.ends_with(".veda") || path.ends_with(".vedic") || path.ends_with(".vish") {
         let mut aadhaar = Aadhaar::new();
         aadhaar.prarambha();
         let sc = match Sourcecode::new(path) {
@@ -78,10 +86,11 @@ pub fn run_file(path: &str) {
             }
         }
     } else {
-        eprintln!("Invalid file extension. Only .ved / .veda / .vedic extension are allowed.");
+        eprintln!("Invalid file extension. Supported: .ved / .veda / .vedic / .vish");
         process::exit(0);
     }
 }
+
 
 pub fn repl() {
     let mut aadhaar = Aadhaar::new();

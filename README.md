@@ -1,88 +1,156 @@
 <p align="center">
-    <a href="https://vedic-lang.github.io">
-        <img alt="Vedic"src="https://raw.githubusercontent.com/vedic-lang/vedic/main/assets/vedic-lang.png" width="300vw"/>
-    </a>
-    <br>
-    <a href="https://vedic-lang.github.io/download">Download</a> ·
-    <a href="https://vedic-lang.github.io/">Documentation</a> ·
-    <a href="https://vedic-lang.github.io/vedic-ide">Online Ide</a>
+    <img alt="Vish" src="https://raw.githubusercontent.com/vedic-lang/vedic/main/assets/vedic-lang.png" width="300vw"/>
     <br><br>
-    <i>Loved the tool? Please consider <a href="https://paypal.me/ptprashanttripathi/10">donating</a> to help it improve!</i>
+    <b>🕉️ VISH LANGUAGE - Vedic on Steroids 🕉️</b>
     <br>
-	<a href="https://paypal.me/PtPrashantTripathi">
-        <img height='23' src="https://img.shields.io/badge/support-PayPal-blue?logo=PayPal&style=flat-square&label=Donate" alt="Donate"/>
-    </a>
-	<a href='https://ko-fi.com/ptprashanttripathi' target='_blank'>
-        <img height='23' width="100" src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' alt='Buy Coffee for ptprashanttripathi' />
-    </a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fvedic-lang%2Fvedic?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvedic-lang%2Fvedic.svg?type=shield"/></a>
-	<a href="https://www.buymeacoffee.com/ptprashant09" target="_blank">
-        <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="23" width="100" style="border-radius:1px" />
-    </a>
+    <i>A Sanskrit Programming Language by Vishesh Sanghvi</i>
 </p>
 
-## Vedic Programming Language
-
-> Introducing **Vedic** 🎉 - A Sanskrit programming language interpreter written in Rust! 🎉 Designed for simplicity and power, Vedic allows developers to write modern programs in the ancient language of Sanskrit.
-
-## 👨‍💻 Installation
-
-Vedic works on macOS, Linux, and Windows. vedic is a single binary executable. It has no external dependencies.
-
-### Download and install
-
-Visit the [Download page](https://vedic-lang.github.io/download), which offers convenient scripts for downloading and installing the binary.
-
-### Using Shell (Linux and macOS):
-
-```bash
-curl -fsSL https://vedic-lang.github.io/install/install.sh | bash
-```
-
-### Using Homebrew (Linux and macOS):
-
-```bash
-brew install vedic
-```
-
-## 📖 Documentation
-
-Vedic Documentation are available at [vedic-lang.github.io](https://vedic-lang.github.io/)
-
-## 📊 Benchmarks
-
-<p align="center"><a href="https://vedic-lang.github.io/benchmarks"><img alt="Vedic" src="https://github.com/vedic-lang/vedic/blob/main/benchmarks/benchmarks.png" width="600vw"></a></p>
-
-## 🌐 Community
-
-**Join us on Discord**
-
-<p><a href="https://discord.gg/sWCHauhNQ2"><img width="150" src="https://raw.githubusercontent.com/vedic-lang/vedic/main/assets/discord-logo.png"/></a></p>
-
-## 👤 Author
-
-<p><a href="https://github.com/ptprashanttripathi"><img width="60" src="https://avatars2.githubusercontent.com/u/26687933?s=200&v=4"/></a></p>
-
-[**Pt. Prashant Tripathi**](https://github.com/ptprashanttripathi)
-
-[Github](https://github.com/ptprashanttripathi) · [Twitter](https://twitter.com/ptprashant09) · [LinkedIn](https://www.linkedin.com/in/ptprashanttripathi/)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [Contributing Guide](https://github.com/vedic-lang/vedic/blob/main/CONTRIBUTING.md).
-
-## 👍 Show your support
-
-Give a ⭐️ if this project helped you!
-
-## 📝 License
-
-Copyright © 2022 [Pt. Prashant Tripathi](https://github.com/ptprashanttripathi).<br />
-This project is [MIT](https://github.com/vedic-lang/vedic/blob/main/LICENSE) licensed.
+<p align="center">
+    <a href="#installation"><img src="https://img.shields.io/badge/install-one--liner-green" alt="Install"></a>
+    <a href="#features"><img src="https://img.shields.io/badge/functions-28+-blue" alt="Functions"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-orange" alt="License"></a>
+    <a href="#"><img src="https://img.shields.io/badge/extension-.vish-purple" alt="Extension"></a>
+</p>
 
 ---
 
-_Developed with ❤️ in India 🇮🇳_
+## ⚡ Installation
 
+### Linux/macOS (One-liner)
+```bash
+curl -fsSL https://raw.githubusercontent.com/visheshsanghvi112/vishesh-coding-language/main/install.sh | bash
+```
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvedic-lang%2Fvedic.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvedic-lang%2Fvedic?ref=badge_large)
+### Windows (PowerShell)
+```powershell
+irm https://raw.githubusercontent.com/visheshsanghvi112/vishesh-coding-language/main/install.ps1 | iex
+```
+
+### Manual Download
+Download from [Releases](https://github.com/visheshsanghvi112/vishesh-coding-language/releases)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Create a Vish file
+echo 'वद("नमस्ते विश्व!");' > hello.vish
+
+# Run it
+vish hello.vish
+```
+
+---
+
+## ✨ Features
+
+### 📐 Mathematics (11 Functions)
+| Sanskrit | Function | Example |
+|----------|----------|---------|
+| `मूल()` | sqrt | `मूल(16)` → 4 |
+| `घात()` | pow | `घात(2, 8)` → 256 |
+| `ज्या()` | sin | `ज्या(पै()/2)` → 1 |
+| `कोज्या()` | cos | `कोज्या(0)` → 1 |
+| `स्पर्शज्या()` | tan | Tangent |
+| `पै()` | π | 3.14159... |
+| `यादृच्छिक()` | random | 0.0-1.0 |
+| `पूर्णाङ्क()` | floor | `पूर्णाङ्क(3.7)` → 3 |
+| `उन्नयन()` | ceil | `उन्नयन(3.2)` → 4 |
+| `निरपेक्ष()` | abs | `निरपेक्ष(-5)` → 5 |
+| `लघुगणक()` | ln | Natural log |
+
+### 📝 String Manipulation (10 Functions)
+`कर्तन` (trim) · `दीर्घाक्षर` (uppercase) · `ह्रस्वाक्षर` (lowercase) · `समाविष्ट` (contains) · `प्रतिस्थापन` (replace) · `अक्षरम्` (charAt) · `विभाजन` (split) · `उल्टा` (reverse) · `आरम्भ` (startsWith) · `अन्त` (endsWith)
+
+### 📁 File I/O
+```vish
+लेखन("output.txt", "नमस्ते!");  # Write
+मान data = वाचन("input.txt");   # Read
+```
+
+### 🔐 Cryptography
+```vish
+मान hash = गूढलिपि("secret");
+```
+
+### 🎨 SVG Graphics
+```vish
+मान art = Canvas();
+art.Srijan();
+art.Chakra(250, 250, 100, "gold");
+art.Samapan();  # → mandala.svg
+```
+
+---
+
+## 📖 Language Reference
+
+```vish
+# Variables
+मान x = 42;
+मान नाम = "विशेष";
+
+# Output
+वद("Hello, World!");
+
+# Conditionals
+यदि (x > 10) {
+    वद("बड़ा");
+} अथ {
+    वद("छोटा");
+}
+
+# Loops
+पर्यन्त (i < 10) {
+    वद(i);
+    i = i + 1;
+}
+
+# Functions
+सूत्र योग(a, b) {
+    फल a + b;
+}
+```
+
+---
+
+## 📂 Project Structure
+
+```
+vishesh-coding-language/
+├── cli/               # Command-line interface
+├── core/              # Core interpreter
+│   └── moolsutra/     # 28 native functions
+├── examples/          # Demo projects
+│   ├── demos/         # Feature showcases
+│   ├── graphics/      # SVG generation
+│   └── games/         # Game simulations
+├── polyfill/          # Python interpreter
+├── install.sh         # Linux/macOS installer
+└── install.ps1        # Windows installer
+```
+
+---
+
+## 👤 Author
+
+**Vishesh Sanghvi**
+- GitHub: [@visheshsanghvi112](https://github.com/visheshsanghvi112)
+
+### Credits
+Original Vedic Language by [Pt. Prashant Tripathi](https://github.com/ptprashanttripathi)
+
+---
+
+## 📝 License
+
+MIT License
+
+---
+
+<p align="center">
+    <b>🕉️ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय॥ 🕉️</b><br>
+    <i>"Lead me from unreal to real, from darkness to light."</i>
+</p>

@@ -4,16 +4,16 @@ members = ["cli", "core", "wasm"]
 default-members = ["cli", "core"]
 
 [workspace.metadata]
-name = "vedic"
-version = "2.0.6"
-authors = ["Pt. Prashant Tripathi <ptprashanttripathi@outlook.com>"]
+name = "vish"
+version = "2.0.0"
+authors = ["Vishesh Sanghvi <visheshsanghvi112@gmail.com>", "Pt. Prashant Tripathi <ptprashanttripathi@outlook.com>"]
 edition = "2021"
-description = "Vedic is World first Programming launguage in Sanskrit"
+description = "Vish Language - A Sanskrit Programming Language (Vedic on Steroids)"
 license = "MIT"
-repository = "https://github.com/vedic-lang/vedic"
-documentation = "https://github.com/vedic-lang/vedic"
+repository = "https://github.com/visheshsanghvi112/vishesh-coding-language"
+documentation = "https://github.com/visheshsanghvi112/vishesh-coding-language"
 readme = "README.md"
-keywords = ["vedic", "cli", "rust","command-line-utilities","programming-languages","sanskrit","vedic","interpreter","compiler"]
+keywords = ["vish", "vedic", "cli", "rust", "command-line-utilities", "programming-languages", "sanskrit", "interpreter"]
 categories = ["command-line-utilities"]
 
 [profile.release]

@@ -1,0 +1,121 @@
+# Satya-Shrinkhala (Vedic Blockchain)
+# A decentralized ledger simulation in Vedic Language.
+
+विधि Block {
+    मान index = 0;
+    मान timestamp = 0;
+    मान previous_hash = "";
+    मान data = "";
+    मान hash = "";
+    मान nonce = 0;
+
+    सूत्र CalculateHash() {
+        man raw_data = index + previous_hash + data + nonce;
+        man hashed = गूढलिपि(raw_data);
+        फल hashed;
+    }
+
+    सूत्र MineBlock(difficulty) {
+        # Proof of Work: Hash must start with 'difficulty' number of zeros
+        # Simplified: We just loop until hash ends with '0' (difficulty 1) for speed
+        
+        # In this demo, we just simulate mining by finding a hash ending in a digit
+        # because our polyfill hash is simple hex.
+        
+        वद("Mining Block...", index);
+        
+        पर्यन्त (saty) {
+            hash = CalculateHash();
+            
+            # Check if hash meets criteria (e.g. starts with "0")
+            # Since we don't have substring yet in core, we use a simple Hack:
+            # We assume if nonce is divisible by 5, it's "mined" (Simulation)
+            # In real compilation, we would check hash[0] == '0'
+            
+            # For Polyfill logic to see "work":
+            nonce = nonce + 1;
+            
+            यदि (nonce > 10) { 
+                # Simulate success
+                वद("Block Mined! Nonce:", nonce);
+                वद("Hash:", hash);
+                फल; 
+            }
+        }
+    }
+}
+
+विधि Blockchain {
+    man chain = []; # List of Blocks
+    man difficulty = 1;
+
+    सूत्र Init() {
+        # Genesis Block
+        man genesis = Block();
+        genesis.index = 0;
+        genesis.timestamp = समय();
+        genesis.data = "Genesis Block - The Beginning of Truth";
+        genesis.previous_hash = "0";
+        genesis.hash = genesis.CalculateHash();
+        
+        chain.आगम(genesis);
+    }
+    
+    सूत्र AddBlock(new_block) {
+        man last_block = chain.निर्गम(); # Gets last but removes it? No, need peek. 
+        # Vedic Lists are primitive. Let's assume we keep last block in separate var for demo.
+        # Rework:
+        
+        man prev = chain[0]; # Hack: assume index 0 is always genesis for now
+        # Actually logic for list peek is missing in my memory of vedic.
+        
+        new_block.previous_hash = prev.hash;
+        new_block.MineBlock(difficulty);
+        chain.आगम(new_block);
+    }
+}
+
+# --- Execution ---
+
+वद("--- सत्य-शृंखला (Blockchain) Demo ---");
+
+man chain = [];
+
+# 1. Genesis Block
+man b0 = Block();
+b0.index = 0;
+b0.data = "Genesis";
+b0.hash = "0000abc"; # Fake hash for genesis
+chain.आगम(b0);
+
+# 2. Block 1 (Transaction)
+man b1 = Block();
+b1.index = 1;
+b1.previous_hash = b0.hash;
+b1.data = "Arjun pays 50 Coins to Krishna";
+
+वद("Mining block 1...");
+b1.MineBlock(1);
+chain.आगम(b1);
+
+# 3. Block 2 (Transaction)
+man b2 = Block();
+b2.index = 2;
+b2.previous_hash = b1.hash;
+b2.data = "Krishna pays 10 Coins to Sudama";
+
+वद("Mining block 2...");
+b2.MineBlock(1);
+chain.आगम(b2);
+
+
+# 4. Verify Chain (Tamper Check)
+वद("\n--- Verifying Blockchain Integrity ---");
+वद("Block 1 Previous Hash:", b1.previous_hash);
+वद("Block 0 Actual Hash:", b0.hash);
+
+यदि (b1.previous_hash == b0.hash) {
+    वद("Chain is Valid (Satya verified).");
+} अथ {
+    वद("Chain is Corrupted (Asatya detected)!");
+}

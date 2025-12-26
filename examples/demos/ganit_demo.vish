@@ -1,0 +1,72 @@
+# Vedic Ganit (Mathematics) Demo
+# गणित प्रदर्शनम्
+
+वद("═══════════════════════════════════════════════");
+वद("      वैदिक गणित मॉड्यूल (Vedic Math Module)");
+वद("═══════════════════════════════════════════════");
+
+# 1. Square Root - मूल (Mool)
+वद("\n▸ मूल (Square Root):");
+मान sixteen = 16;
+मान root = मूल(sixteen);
+वद("  √16 =", root);
+वद("  √2 =", मूल(2));
+
+# 2. Power - घात (Ghaat)
+वद("\n▸ घात (Power):");
+वद("  2³ =", घात(2, 3));
+वद("  5² =", घात(5, 2));
+
+# 3. Absolute Value - निरपेक्ष (Nirapeksh)
+वद("\n▸ निरपेक्ष (Absolute Value):");
+वद("  |−42| =", निरपेक्ष(-42));
+वद("  |3.14| =", निरपेक्ष(3.14));
+
+# 4. Trigonometry (Ancient Sanskrit Names!)
+वद("\n▸ त्रिकोणमिति (Trigonometry):");
+मान angle = पै() / 4;  # 45 degrees in radians
+वद("  π/4 radians =", angle);
+वद("  sin(π/4) = ज्या =", ज्या(angle));
+वद("  cos(π/4) = कोज्या =", कोज्या(angle));
+वद("  tan(π/4) = स्पर्शज्या =", स्पर्शज्या(angle));
+
+# 5. Pi Constant - पै (Pai)
+वद("\n▸ पै (Pi Constant):");
+वद("  π =", पै());
+
+# 6. Circle Calculations
+वद("\n▸ वृत्त गणना (Circle Calculations):");
+मान radius = 5;
+मान area = पै() * घात(radius, 2);
+मान circumference = 2 * पै() * radius;
+वद("  त्रिज्या (radius) =", radius);
+वद("  क्षेत्रफल (area) =", area);
+वद("  परिधि (circumference) =", circumference);
+
+# 7. Random Number - यादृच्छिक (Yadrichchhik)
+वद("\n▸ यादृच्छिक (Random Number):");
+वद("  Random 1:", यादृच्छिक());
+वद("  Random 2:", यादृच्छिक());
+वद("  Random 3:", यादृच्छिक());
+
+# 8. Floor & Ceiling
+वद("\n▸ पूर्णाङ्क / उन्नयन (Floor/Ceiling):");
+वद("  floor(3.7) =", पूर्णाङ्क(3.7));
+वद("  ceil(3.2) =", उन्नयन(3.2));
+
+# 9. Natural Logarithm - लघुगणक (Laghuganik)
+वद("\n▸ लघुगणक (Natural Log):");
+वद("  ln(e) =", लघुगणक(2.71828));
+वद("  ln(10) =", लघुगणक(10));
+
+# 10. Pythagorean Theorem Demo
+वद("\n▸ पाइथागोरस प्रमेय (Pythagorean Theorem):");
+मान a = 3;
+मान b = 4;
+मान c = मूल(घात(a, 2) + घात(b, 2));
+वद("  a = 3, b = 4");
+वद("  c = √(a² + b²) =", c);
+
+वद("\n═══════════════════════════════════════════════");
+वद("      गणित सम्पूर्णम् (Mathematics Complete!)");
+वद("═══════════════════════════════════════════════");
